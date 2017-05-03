@@ -1,0 +1,1164 @@
+
+%% bare_jrnl.tex
+%% V1.4
+%% 2012/12/27
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8 or later) with an IEEE journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex,
+%%                    bare_jrnl_transmag.tex
+%%*************************************************************************
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+%\documentclass[journal]{IEEEtran}
+\documentclass[conference]{IEEEtran}
+\usepackage{epsfig,graphicx,graphics,times,amssymb}
+\usepackage{multirow}
+\usepackage{tabularx}
+%\usepackage{hyperref}
+%\hypersetup{colorlinks=true,urlcolor=blue,citecolor=black,linkcolor=black}
+%\hypersetup{colorlinks=true,citecolor=blue,urlcolor=blue}
+\usepackage[utf8]{inputenc} %\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[novbox]{pdfsync} 
+\usepackage{pstricks}
+%\usepackage{setspace, graphicx, caption, subcaption, rotating}
+%\usepackage{float, subfiles, listings}
+%\usepackage{url}
+%\usepackage[vertfit]{breakurl} %% corrigir alinhamento de url na bibliografia
+%\usepackage[normalem]{ulem}
+%\usepackage{float, listings}
+%\usepackage[numbers,sort&compress]{natbib}
+%\usepackage{multirow}
+%\usepackage{afterpage}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{epstopdf}
+
+\usepackage{lipsum,tabularx}
+\usepackage{array}
+\usepackage{calc}
+
+
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epslatex/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Do not use the stfloats baselinefloat ability as IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and
+% Axel Sommerfeldt. This package may be useful when used in conjunction with
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/endfloat/
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+%
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+% Do not put math or special symbols in the title.
+%\title{Digital Filters Applied to the Readout System of the Neutrinos-Angra Detector}
+%
+%\title{Digital Filters Applied to the Readout System of the Neutrinos-Angra Detector for a Single Photoelectron with the PMT Hamamatsu R5912}
+%\title{SNR Enhancement and Amplitude Estimation of the Front-end Signal Generated with the PMT R5912 by Hamamatsu for the Neutrinos-Angra Project}
+\title{A Study of Distance/Similarity Measurements in the context of Signal Processing (Density Estimation)}
+%\title{Study of Digital Filters Applied to the Front-end Output Signal Generated by Single-Photoelectrons with the PMTs Hamamatsu R5912 on the Neutrinos-Angra Project}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{I. A. Costa,
+			  D. M. Souza,
+             R. A. N\'obrega% <-this % stops a space
+
+%\thanks{M. Shell is with the Department of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta, GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
+%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%\thanks{Manuscript received April 19, 2005; revised December 27, 2012.}
+}
+
+%\author{
+%{Tiago A. Alvarenga, Tony I. Dornelas, Dhiogo R. Esterce, Jos\'e A. de C. Vieira, Rafael A. N\'obrega}\\
+%{Federal University of Juiz de Fora - UFJF}\\
+%{PPEE - PROGRAMA DE P\'OS-GRADUA\c{C}\~AO EM ENGENHARIA EL\'ETRICA}
+%\\
+%}
+%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+
+% note the % following the last \IEEEmembership and also \thanks -
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+%
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+% The paper headers
+\markboth{Journal of \LaTeX\ Class Files,~Vol.~XX, No.~X, December~2014}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+%
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2012 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+\maketitle
+
+
+\begin{abstract}
+Currently the number of applications where the data generation function is not known has been growing, making necessary the use of non-parametric estimation techniques to describe such model. Therefore, relevant questions emerge regarding the quality of the model that represents some dataset and how to quantify this quality. This article aims to evaluate some of the measurements presented in the literature used for this purpose, evaluating different pdf regions in the context of goodness of fit.
+\end{abstract}
+
+
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+
+Divergence, Similarity, Histogram, Probability Density Function.
+
+\end{IEEEkeywords}
+
+\IEEEpeerreviewmaketitle
+
+\section{Introduction}
+
+\IEEEPARstart{I}{n} the last decades, several experiments generating large amounts of data were started, increasing the demand for studies related to stochastic probability density modeling using non-parametrics methods, where the probability density function (pdf) model is not known a priori. Therefore, to evaluate a pdf estimation procedure it becomes necessary goodness-of-fit measurements which may be done considering the distance or the similarity between functions.
+
+Due to its importance, distance or similarity measurements between two functions are fundamental to improve the pdf estimation itself and to solve classification, clustering and spectral density estimation problems. However, there are a lot of distance and similarity measures in the literature \cite{deza2006dictionary} \cite{deza2009encyclopedia}, each one more suitable for one kind of application than the other.
+
+In \cite{basseville2013divergence}, an annotated bibliography about divergence measurements for statistical data processing and inference problems was written. However, even after many studies, there is a continual demand to find an optimal measure of distance/similarity between functions for each kind of application and their particularities.
+
+Motivated by the studies shown in \cite{cha2007comprehensive}, the main goal of this work is to find an efficient distance/similarity measurement to be applied to non-parametric methods of density estimation in the classification context. The second objective is to characterize the main distances/similarity measurements, assessing their sensitivities to separated pdf regions.
+
+The paper is organized as follows. Section \ref{metho} presents the work methodology and its context. Section \ref{desenvolvimento} shows the first approaches to a better understanding about the divergences and Section \ref{resultados} brings the achieved results and relevant comments on the subject. Finally, Section \ref{conclusao} concludes this work.
+
+\section{The methodology}\label{metho}
+
+In the literature there are two ways to measure the difference of two objects, the distance and the similarity. The first one, satisfy the metric properties being called metric distance, and the other one, are non-metric distance, called divergence or similarity \cite{cha2007comprehensive}. Distance and similarity measurements are denoted by $d_x$ and $s_x$ respectively throughout the paper.
+
+The distance/similarity measures should be chosen considering which type of measurement will be analyzed. In this work it will be considered the most popular pattern representation, the probability density function in discrete form.
+
+\cite{cha2007comprehensive} has approached this subject analyzing various distance/similarity measures, dividing them into both syntactic and semantic relationships and measuring their correlation in order to know which distances/similarities might bring different information. By doing this, it is possible to select the most relevant distance/similarity measurements making it possible to perform a detailed study about them.
+
+\subsection{Distance/Similarity Measures}
+
+In order to study their characteristics, 42 measures have been selected as presented in Table~\ref{tab01}, following the same division proposed in \cite{cha2007comprehensive}. Their equations can be found in \cite{deza2009encyclopedia}.
+
+
+\begin{table}[!h]
+	\tiny 
+	\centering
+	\caption{Table of Divergence/Similarity divided by family}
+	\label{tab01}
+	\begin{tabular}{cccc}
+		\multicolumn{4}{c}{\textbf{Divergence's Family}}                                                                                                  \\
+		\textbf{$L_p$ Minkowski}           & \textbf{$L_1$}         & \textbf{Intersection}      & \textbf{Inner Product}                    \\ \hline \hline
+		$L_1$                              & Sorensen               & Intersection               & Inner Product                             \\
+		$L_2$                              & Gower                  & Wave                       & Harmonic                                  \\
+		$L_\infty$                         & Soergel                & Motyka                     & Cosine                                    \\
+				                           & Kulczynski             & Kulczynski                 & Kumar                                     \\
+										   & Canberra               & Ruzicka                    & Jaccard                                   \\
+										   & Lorentzian             & Tanimoto                   & Dice                                      \\
+%									   	   &                        &				              &                                           \\
+										   &                        &                            &                                           \\
+		\textbf{Fidelity or Squared-Chord} & \textbf{Squared $L_2$} & \textbf{Shannon's Entropy} & \multicolumn{1}{c}{\textbf{Combinations}} \\ \hline \hline
+		Fidelity                           & Squared Euclidean      & Kullback-Leibler           & \multicolumn{1}{c}{Taneja}                \\
+		Bhattacharyya                      & Pearson $\chi^2$       & Jeffreys                   & \multicolumn{1}{c}{Kumar-Johnson}         \\
+		Hellinger                          & Neyman $\chi^2$        & K Divergence               & \multicolumn{1}{c}{Avg($L_1$,$L_\infty$)} \\
+		Squared-chord                      & Squared $\chi^2$       & Topsoe                     & \multicolumn{1}{c}{}                      \\
+		& ProbSym $\chi^2$       & Jensen-Shannon             & \multicolumn{1}{c}{}                      \\
+		& Divergence             & Jensen difference          & \multicolumn{1}{c}{}                      \\
+		& Clark                  &                            & \multicolumn{1}{c}{}                      \\
+		& Additive $\chi^2$      &                            & \multicolumn{1}{c}{}                      \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Dataset}\label{dataset}
+
+We assume that our dataset, for the correlation test, is generated based on two distributions; a Gaussian $P=N(\mu, \sigma)$, where $\mu$ is mean or expectation of the distribution and $\sigma$ is standard deviation, and a Gamma distribution $Q=P.\Gamma(\alpha,\beta)$, where $\alpha$ is a shape parameter and $\beta$ is a rate parameter, denoted in this article by $\alpha=ne$ and $\beta = P_i/ne$. Figure~\ref{fig:01} shows $P(0,1)$ and $Q$ for $ne=[50,500,5000,50000]$ as representative example.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.35\linewidth]{./figuras/fig02.png}
+  \includegraphics[width=0.35\linewidth]{./figuras/fig03.png}\\
+  \includegraphics[width=0.35\linewidth]{./figuras/fig04.png}
+  \includegraphics[width=0.35\linewidth]{./figuras/fig05.png}\\
+  \caption{Four representative examples of $P(0,1)$ and $Q$ for $ne=[50,500,5000,50000]$, respectively.}
+  \label{fig:01}
+\end{figure}
+
+
+\subsection{Regions of Interest}
+
+In order to understand the sensibility of each divergence/similarity measure in different regions of a pdf, three regions of interest (RoI) are proposed: head, derivative and tail, as shown in Figure~\ref{fig:02}. Head has been defined as the region where the probabilities are greater than 0.9 of the maximum; tail less than 0.01 of the maximum and derivative as the region between head and tail. 
+These RoI makes it possible to evaluate important specificities of the considered distance/similarity measures.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.70\linewidth]{./figuras/fig06.png}
+	\caption{Representative figure of Regions of Interest.}
+	\label{fig:02}
+\end{figure}
+
+\subsection{Density Estimation}\label{KDE}
+
+Density estimation can be done in different ways: Normalized Histogram, Normalized Average Shifted Histogram (ASH) and Kernel Density Estimation (KDE) are some of the main approaches in this matter.
+
+
+%For the task of particle identification in experiments generating large amount of data the main problem becomes to estimate their joint probability density function (PDF), shown in Equation~\ref{eq:04}.
+%
+%\begin{equation}\label{eq:04}
+%L(\theta ) = {P_{i}}({x_1},{x_2}, \ldots ,{x_n}|\theta )
+%\end{equation}
+%
+%The task of estimation the joint PDF can be facilitated if we suppose independence between the variables, thus the Equation~\ref{eq:04} can be simplified into Equations~\ref{eq:02} and \ref{eq:03}.
+%
+%\begin{equation}\label{eq:02}
+%{L_s}\left( x \right) = \prod\limits_{i = 1}^m {{P_{s,i}}({x_i})}
+%\end{equation}
+%
+%\begin{equation}\label{eq:03}
+%{L_b}\left( x \right) = \prod\limits_{i = 1}^m {{P_{b,i}}({x_i})}
+%\end{equation}
+%where ${{P_{s,i}}({x_i})}$ and ${{P_{b,i}}({x_i})}$ are the probabilities of the event in each variable, $L_s$ and $L_b$, likelihood of signal and background, respectively.
+%
+%Then a discriminant can be applied with the Equation~\ref{eq:05}
+%
+%\begin{equation}\label{eq:05}
+%dL = \frac{{Ls}}{{Ls + Lb}}
+%\end{equation}
+%
+\subsubsection{Histogram}
+
+The estimation based on a histogram is one of the simplest ways to tackle this problem, naturally used in many fields, as represented by equation~\ref{eq:02}.
+
+\begin{equation}\label{eq:02}
+{\hat f_h}\left( x \right) = \frac{1}{{nh}}\sum\limits_{i = 1}^n {\sum\limits_j {I\left( {{x_i} \in {B_j}} \right)I\left( {x \in {B_j}} \right)} }
+\end{equation}
+
+Where, $n$ is the events number, $i$ e $j$ are the events subindices, $I$ is the indicator function and,
+
+\begin{equation}\label{eq:03}
+\begin{array}{l}
+{B_j} = \left[ {{x_o} + \left( {j - 1} \right)h,{x_o} + jh} \right) \\
+j \in {\rm{Z}} \\
+\end{array}
+\end{equation}
+
+\subsubsection{Average Shifted Histogram}
+
+The previous method handles with the origin parameter (${x_o}$) and the bandwidth (\emph{h}), both, if chosen wrongly, may result in poor estimation. In order to reduce this problem, estimation might be done by averaging sub-histograms, making the method independent of origin (${x_o}$) \cite{seather1992performance}, as shown in equation~\ref{eq:04}.
+
+\begin{equation}\label{eq:04}
+{\hat f_h}\left( x \right) = \frac{1}{M}\sum\limits_{l = 0}^{M - 1} {\frac{1}{{nh}}\sum\limits_{i = 1}^n {\sum\limits_j {I\left( {{x_i} \in {B_j}} \right)I\left( {x \in {B_j}} \right)} } }
+\end{equation}
+
+Where,
+
+\begin{equation}\label{eq:05}
+\begin{array}{l}
+{B_{j,l}} = \left[ {\left( {j - 1 + \frac{1}{M}} \right)h,\left( {j + \frac{1}{M}} \right)h} \right) \\
+l \in \left\{ {0,1,...,M - 1} \right\} \\
+\end{array}
+\end{equation}
+
+In this work, the bandwidth applied to the histogram and the ASH techniques was chosen based on the rule elaborated by Freedman-Diaconis \cite{freedman1981histogram}.
+
+\subsubsection{Kernel Density Estimation}
+
+At last, a non-parametric technique known as Kernel Density Estimation \cite{silverman1986density}, which general formulation is presented in equation~\ref{eq:01}, can be done using fixed or variable bandwidth, KDEs with variable bandwidth usually present better results in relation to those using fixed bandwidth \cite{terrell1992variable} and can be found in detail here \cite{cba2016likelihood}\cite{scott2015multivariate}.
+
+{\footnotesize
+	\begin{equation}\label{eq:01}
+	\hat f\left( {{x_i}} \right) = \frac{1}{{nh}}\mathop \sum \limits_{k = 1}^{n} K\left( {\frac{{({x_i} - {X_k})}}{h}} \right)
+	\end{equation}
+}where \emph{K(u)} is the kernel function, \emph{h} is the bandwidth and \textit{n} is the number of events around the point $x_i$.
+ 
+
+
+%\section{Development}\label{desenvolvimento}
+
+\section{Divergence/Similarity Selection and RoI Evaluation Criteria}\label{desenvolvimento}
+
+In this section it will be presented the procedure applied to select the divergences/similarities based on correlation, as described in \cite{cha2007comprehensive}, and the definition of a methodology used to compare the RoI in the context of divergence/similarity measurements.
+
+
+%In the sense of avoid a precipitate conclusion about the tests made here, all of them was made $n$ times
+%%, generating the $P$ and $Q$ random functions each time%
+%and the variance measure will be presented in all results shown in this article. Thus the results shown here will not be a point out of a curve, respecting the necessary statistic for point to something.
+%
+%Other important goal of this paper is analyze the sensibility of each measure to the function points number and try to recognize if one divergence/similarity converge more faster than other one.
+
+
+\subsection{Divergence/Similarity Selection}
+
+The correlation matrix considering all the 42 divergences is shown in Figure~\ref{fig:03}. The number of divergences can be reduced by choosing the measures with low correlation, keeping at least one of each family.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\linewidth]{./figuras/fig07.png}
+	\caption{Correlation Matrix between the Divergences/Similarities.}
+	\label{fig:03}
+\end{figure}
+
+Table~\ref{tab01} could then be reduced to 12 divergences. The equation of each one of them is shown from Table~\ref{tab02} to Table~\ref{tab08}. Those divergences/similarities will be analyzed in details in the next sections.
+
+\begin{table}[!h]
+	\centering
+	\caption{$L_p$ Minkowski family table}
+	\label{tab02}
+	\begin{tabular}{ccc}
+		%\multicolumn{3}{c}{$L_p$ Minkowski family} \\ \hline 
+		Divergence/Similarity   & Equation   &    \\ \hline
+		$L_{\infty}$           &    ${d_{{L_\infty }}} = \mathop {\max }\limits_i \left| {{P_i} - {Q_i}} \right|$        &   (1) \\
+		$L_{2Norm}$            &    ${d_{{L_2}}} = \sqrt {\sum\limits_{i = 1}^N {{{\left( {{P_i} - {Q_i}} \right)}^2}} } $        &   (2) \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{$L_1$ family table}
+	\label{tab03}
+	\begin{tabular}{ccc}
+		%\multicolumn{3}{c}{$L_1$ family} \\ \hline 
+		Divergence/Similarity   & Equation   &    \\ \hline
+		$Sorensen$           &    ${d_{sor}} = \frac{{\sum\limits_{i = 1}^N {\left| {{P_i} - {Q_i}} \right|} }}{{\sum\limits_{i = 1}^N {\left( {{P_i} + {Q_i}} \right)} }}$        &   (3) \\
+		$Gower$            &    ${d_{gow}} = \frac{1}{N}\sum\limits_{i = 1}^N {\left| {{P_i} - {Q_i}} \right|} $        &   (4) \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Inner Product family table}
+	\label{tab04}
+	\begin{tabular}{ccc}
+		%\multicolumn{3}{c}{$L_1$ family} \\ \hline 
+		Divergence/Similarity   & Equation   &    \\ \hline
+		$Inner Product$           &    ${S_{IP}} = \sum\limits_{i = 1}^N {{P_i}{Q_i}}$        &   (5) \\
+		$Harmonic Mean$            &    ${S_{HM}} = 2\sum\limits_{i = 1}^N {\frac{{{P_i}{Q_i}}}{{{P_i} + {Q_i}}}}$       &   (6) \\
+		$Cosine$            &   ${S_{Cos}} = \frac{{\sum\limits_{i = 1}^N {{P_i}{Q_i}} }}{{\sqrt {\sum\limits_{i = 1}^N {{P_i}^2} } \sqrt {\sum\limits_{i = 1}^N {{Q_i}^2} } }}$	 		    &   (7) \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Fidelity family table}
+	\label{tab05}
+	\begin{tabular}{ccc}
+		%\multicolumn{3}{c}{$L_1$ family} \\ \hline 
+		Divergence/Similarity   & Equation   &    \\ \hline
+		$Hellinger$           &    ${d_H} = \sqrt {2\sum\limits_{i = 1}^d {{{\left( {\sqrt {{P_i}}  - \sqrt {{Q_i}} } \right)}^2}} }$        &   (8) \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Squared $L_2$ family table}
+	\label{tab06}
+	\begin{tabular}{ccc}
+		%\multicolumn{3}{c}{$L_1$ family} \\ \hline 
+		Divergence/Similarity   & Equation   &    \\ \hline
+		$Squared \chi^2$           &    ${d_{SqChi}} = \sum\limits_{i = 1}^N {\frac{{{{({P_i} - {Q_i})}^2}}}{{{P_i} + {Q_i}}}} $        &   (9) \\
+		$Additive Symmetric \chi^2$            &    ${d_{AdChi}} = \sum\limits_{i = 1}^N {\frac{{{{({P_i} - {Q_i})}^2}({P_i} + {Q_i})}}{{{P_i}{Q_i}}}}$        &   (10) \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\centering
+	\caption{Shannon's entropy family table}
+	\label{tab07}
+	\begin{tabular}{ccc}
+		%\multicolumn{3}{c}{$L_1$ family} \\ \hline 
+		Divergence/Similarity   & Equation   &    \\ \hline
+		$Kullback-Leibler$           &    ${d_{KL}} = \sum\limits_{i = 1}^N {{P_i}\ln \frac{{{P_i}}}{{{Q_i}}}}$        &   (11) \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[!h]
+	\centering
+	\caption{Combinations family table}
+	\label{tab08}
+	\begin{tabular}{ccc}
+		%\multicolumn{3}{c}{$L_1$ family} \\ \hline 
+		Divergence/Similarity   & Equation   &    \\ \hline
+		$Kumar-Johnson$           &    ${d_{KJ}} = \sum\limits_{i = 1}^N {\left( {\frac{{{{\left( {{P_i}^2 - {Q_i}^2} \right)}^2}}}{{2{{\left( {{P_i}{Q_i}} \right)}^{{\raise0.7ex\hbox{$3$} \!\mathord{\left/
+										{\vphantom {3 2}}\right.\kern-\nulldelimiterspace}
+									\!\lower0.7ex\hbox{$2$}}}}}}} \right)} $        &   (12) \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection{RoI Evaluation Criteria}
+
+In order to create a controlled environment, a Monte Carlo simulation has been implemented: the estimation tests were carried out using a dataset generated from the analytical functions described in \ref{dataset}.
+The dataset was generated based on a Gaussian function $N(1,0)$ (to construct the pdf model) and an additional Gaussian noise. The analytical function used to generated the Gaussian pdf was then compared to its counterpart with additive noise and the RoI evaluated; each RoI has the same number of points. 
+
+
+Figures~\ref{fig:06a} and \ref{fig:06b} show the normalized divergence measurements between these functions. Figure~\ref{fig:06a} presents the divergences obtained separately for each RoI, denoted as $FIT$, and  Figure \ref{fig:06b} presents the divergences obtained for the entire pdf applying the noise signal only to the RoI which is being evaluated, denote as $FULL$.
+Figures~\ref{fig:06a} and \ref{fig:06b} show that only the divergences $Sorensen$, $InnerProduct$, $HarmonicMean$ and $Cosine$ present different results between these two methodologies.%Figure \ref{fig:01} shows the analytical function in red and its counterpart in blue.
+These differences can be explained by analyzing the equations of each divergence. The $Sorensen$ has a normalization dependence according to the number of points and the three others do not go to zero when one point is equal to the other, as shown in Figure~\ref{fig:06c}.
+
+
+\begin{figure}[h!]
+	
+	\centering
+	\begin{subfigure}{0.225\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/pdf_fit.png}
+		\caption{}
+		\label{fig:06a}
+	\end{subfigure}
+	\begin{subfigure}{0.225\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/pdf_full.png}
+		\caption{}
+		\label{fig:06b}
+	\end{subfigure}
+	\begin{subfigure}{0.225\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/pdf_same.png}
+		\caption{}
+		\label{fig:06c}
+	\end{subfigure}
+
+	\caption{Difference between two functions. (a) Functions difference made separately for each region of interest, denote here as $FIT$, (b) Functions difference made for the entire PDF, but the uniform noise was applied in each region by time, denote here as $FULL$, and (c) The functions were the same.}
+	\label{fig:06}
+	
+\end{figure}
+
+Observing the absolute values resulted from applying these two methodologies to data and examining each divergence equation, the method which made it possible to normalize the results over the three RoI was chosen, according to Table~\ref{tab09}.
+
+\begin{table}[!h]
+	\centering
+	\caption{Methodology chosen for normalize each divergence/similarity}
+	\label{tab09}
+	\begin{tabular}{ccc}
+    & Divergence/Similarity 											 & Method   \\ \hline
+	1 & $L_{Inf}$                                                        & FULL     \\
+	2 & $L_{2Norm}$                                                      & *        \\
+	3 & $Sorensen$                                                       & FULL     \\
+	4 & $Gower$                                                          & FULL     \\
+	5 & $Inner Product$                                                  & FIT      \\
+	6 & $Harmonic Mean$                                                  & FIT      \\
+	7 & $Cosine$                                                         & FULL     \\
+	8 & $Hellinger$                                                      & *        \\
+	9 & $Squared \chi^2$                                                 & *        \\
+	10 & $Additive Symmetric \chi^2$                                      & FIT/FULL \\
+	11 & $Kullback-Leibler$                                               & FIT/FULL \\
+	12 & $Kumar-Johnson$                                                  & FIT/FULL \\
+	\hline
+\end{tabular}
+
+{\scriptsize * They can not be normalized by any of the two methods because of the square root present in the equations.}
+\end{table}
+
+\section{Results and Comments}\label{resultados}
+
+Figure~\ref{fig:07} shows the normalized divergences values achieved using the methodology defined in Table~\ref{tab09}. One of the goals of this work is to clearly understand the sensitivity of distance measures according to the considered RoI.
+As it is possible to notice, divergences 1, 2, 3, 4 and 7 give equal importance to all RoI, whereas 5 and 6 are more sensitive to the head region, at the same time that 8, 9, 10, 11 and 12 prioritize the tail region.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.50\linewidth]{./figuras/pdf_method.png}
+	\caption{Difference between two functions.}
+	\label{fig:07}
+\end{figure}
+
+To understand the effect of the binning process occurring in histograms construction, the Gaussian+noise pdf was binned based on \cite{freedman1981histogram}, for a thousand and 500 thousands events. The results for this new dataset is shown in Figure \ref{fig:12}. The results show that when binning is applied, the derivative region is significantly affected (the estimation error increases above the other RoI), followed by the head region.
+
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{0.225\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/erro_hist_1000.png}
+		\caption{}
+		\label{fig:12a}
+	\end{subfigure}
+	\begin{subfigure}{0.225\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/erro_hist_500000.png}
+		\caption{}
+		\label{fig:12b}
+	\end{subfigure}
+		\caption{Difference between two functions. (a) made with $1*10^3$ events number and (b) with $5*10^5$ events number.}
+		\label{fig:12}
+\end{figure}
+
+%%
+
+To evaluate the effect of the number of events over the estimation process using the techniques described in section \ref{metho} (that might be understood as a Poisson process), this value has been scanned from 50 events to 100 thousands events. Figures~\ref{fig:13} and \ref{fig:14} shows a representative case for the $ Gower $ divergence. It can be seen in Figures~\ref{fig:13a} and \ref{fig:13b} that, in absolute values, the ASH presents lower values of divergence, as expected, and in Figures~\ref{fig:13c} and \ref{fig:13d} it is possible to observe the convergence of the estimators in relation to the quantity of events. The Histogram tends to behave like the ASH as the number of events tends to infinity, whereas ASH with few events already has a reasonable response.
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Ahist.png}
+		\caption{}
+		\label{fig:13a}
+	\end{subfigure}
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Nhist.png}
+		\caption{}
+		\label{fig:13b}
+	\end{subfigure}
+	
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Aash.png}
+		\caption{}
+		\label{fig:13c}
+	\end{subfigure}
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Nash.png}
+		\caption{}
+		\label{fig:13d}
+	\end{subfigure}
+	
+	
+	\caption{Divergence measurement of a density estimator for Gaussian distribution. (a) Absolute values for Normalized Histogram, (b) Normalized values for Normalized Histogram, (c) Absolute values for Normalized ASH and (d) Normalized values for Normalized ASH.}
+	\label{fig:13}
+\end{figure}
+
+
+
+When Figures~\ref{fig:14a} and \ref{fig:14b} are compared, it is possible to notice that, in absolute values, the two methods present similar results, for this reality, however, when looking at Figures~\ref{fig:14c} and \ref{fig:14d} it is clear the effect of the variable bandwidth, which adjusts the bandwidth according to local probability event for each region keeping the contribution of each one similar to that shown in Figure~\ref{fig:07}.
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Akdef.png}
+		\caption{}
+		\label{fig:14a}
+	\end{subfigure}
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Nkdef.png}
+		\caption{}
+		\label{fig:14b}
+	\end{subfigure}
+	
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Akdev.png}
+		\caption{}
+		\label{fig:14c}
+	\end{subfigure}
+	\begin{subfigure}{0.2\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/Nkdev.png}
+		\caption{}
+		\label{fig:14d}
+	\end{subfigure}
+	
+	
+	\caption{Divergence measurement of a density estimator for Gaussian distribution (a) Absolute values for KDE with fixed bandwidth, (b) Normalized values for KDE with fixed bandwidth, (c) Absolute values for KDE with variable bandwidth and (d) Normalized values for KDE with variable bandwidth.}
+	\label{fig:14}
+\end{figure}
+
+%% FALAR DAS TABELAS!
+
+Tables \ref{tab:10}, \ref{tab:11}, \ref{tab:12} and \ref{tab:13} show a summary of all the results considering all the divergences/similarities in the three regions of interest, in absolute and normalized values, for three different numbers of events and for the four considered estimation techniques: Histogram, ASH, KDE with fixed bandwidth and KDE with variable bandwidth, respectively. The measurements errors for the values shown in these tables are less than $3.5\%$.
+
+Analyzing these results we can see that the divergences L$_{\infty}$, L$_{2}$, Sorensen, Cosine, Hellinger and Squared $\chi^2$ presents similar behavior to that described for the Gower divergence. The InnerProduct and Harmonic divergences present a certain immunity to the number of events and the histogram error, since the results shown in the Tables \ref{tab:10}, \ref{tab:11}, \ref{tab:12} and \ref{tab:13} resemble those of Figure \ref{fig:07}. For the AddSym $\chi^2$ divergence, the Histogram results did not converge to the ASH results and the KDE with fixed bandwidth seems to tend to give equal importance to the three RoI. Something interesting happened in one of the most used divergences in the literature, the Kullback-Leibler, besides the convergence of the Histogram towards the ASH results, and the absolute values are similar for both KDEs types, the fixed bandwidth KDE presented results that tends to the results found in the test shown in Figure \ref{fig:12}; and the variable bandwidth KDE tends to equalize the three regions. Finally, the Kumar-Johnson similarity results show that the Histogram and the fixed bandwidth KDE tend to $33\%$ in each region, however the ASH and the variable bandwidth KDE seem to give similar result to those found in the Gaussian noise analysis.
+
+
+\begin{table}[]	
+	\tiny														
+	\centering															
+	\caption{Table of normalized and absolute values of Histogram.}															
+	\label{tab:10}
+	\begin{tabular}{p{.045\textwidth}|c|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}}														
+	%\begin{tabular}{cccccccc}															
+		\multirow{3}{*}{\shortstack{Divergence/\\Similarity}}	&	\multirow{3}{*}{\shortstack{Region\\of\\Interest}}	&	\multicolumn{6}{c}{Number of Events} \\											
+		&		&	\multicolumn{2}{c}{$5*10^1$}	&	\multicolumn{2}{c}{$1*10^3$}	&	\multicolumn{2}{c}{$1*10^5$} \\							
+		&		&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	 \\ \hline \hline
+		\multirow{3}{*}{L$_{\infty}$}	&	Tail	&	0,191	&	29,32	&	0,015	&	7,64	&	0,002	&	3,69	 \\
+		&	Deriv	&	0,275	&	44,59	&	0,104	&	53,03	&	0,027	&	49,46	 \\
+		&	Head	&	0,162	&	26,09	&	0,078	&	39,33	&	0,026	&	46,85	 \\ \hline
+		\multirow{3}{*}{L$_{2}$}	&	Tail	&	92,743	&	38,21	&	6,655	&	12,51	&	0,414	&	3,74	 \\
+		&	Deriv	&	76,978	&	33,23	&	19,442	&	37,65	&	4,196	&	37,62	 \\
+		&	Head	&	66,696	&	28,56	&	26,505	&	49,84	&	6,637	&	58,64	 \\ \hline
+		\multirow{3}{*}{Sorensen}	&	Tail	&	0,092	&	37,97	&	0,007	&	13,81	&	0,000	&	3,80	 \\
+		&	Deriv	&	0,073	&	31,01	&	0,017	&	33,83	&	0,004	&	34,86	 \\
+		&	Head	&	0,076	&	31,02	&	0,028	&	52,36	&	0,007	&	61,34	 \\ \hline
+		\multirow{3}{*}{Gower}	&	Tail	&	0,044	&	39,93	&	0,003	&	13,95	&	0,000	&	3,80	 \\
+		&	Deriv	&	0,033	&	30,84	&	0,007	&	33,90	&	0,002	&	34,86	 \\
+		&	Head	&	0,032	&	29,24	&	0,012	&	52,15	&	0,003	&	61,34	 \\ \hline
+		\multirow{3}{*}{\shortstack{Inner-\\Product}}	&	Tail	&	1,05E+02	&	0,10	&	8,45E+00	&	0,01	&	2,18E+00	&	0,00	 \\
+		&	Deriv	&	1,88E+04	&	17,91	&	1,78E+04	&	16,28	&	1,77E+04	&	15,97	 \\
+		&	Head	&	8,88E+04	&	81,99	&	9,15E+04	&	83,71	&	9,29E+04	&	84,03	 \\ \hline
+		\multirow{3}{*}{Harmonic}	&	Tail	&	1,51E+03	&	0,60	&	1,10E+03	&	0,43	&	7,62E+02	&	0,30	 \\
+		&	Deriv	&	6,38E+04	&	25,60	&	6,22E+04	&	24,48	&	6,25E+04	&	24,41	 \\
+		&	Head	&	1,85E+05	&	73,80	&	1,91E+05	&	75,09	&	1,93E+05	&	75,30	 \\ \hline
+		\multirow{3}{*}{Cosine}	&	Tail	&	0,043	&	46,08	&	0,000	&	5,93	&	0,000	&	0,31	 \\
+		&	Deriv	&	0,028	&	34,81	&	0,002	&	37,91	&	0,000	&	30,24	 \\
+		&	Head	&	0,015	&	19,12	&	0,003	&	56,17	&	0,000	&	69,45	 \\ \hline
+		\multirow{3}{*}{Hellinger}	&	Tail	&	282,973	&	56,41	&	59,413	&	46,73	&	6,973	&	32,86	 \\
+		&	Deriv	&	150,428	&	29,62	&	36,769	&	30,60	&	7,445	&	35,33	 \\
+		&	Head	&	70,351	&	13,97	&	27,356	&	22,67	&	6,758	&	31,81	 \\ \hline
+		\multirow{3}{*}{Squared $\chi^2$}	&	Tail	&	220,059	&	51,97	&	51,737	&	43,98	&	6,785	&	32,31	 \\
+		&	Deriv	&	136,078	&	31,81	&	35,679	&	31,82	&	7,441	&	35,61	 \\
+		&	Head	&	69,971	&	16,23	&	27,337	&	24,20	&	6,758	&	32,08	 \\ \hline
+		\multirow{3}{*}{AddSym $\chi^2$}	&	Tail	&	8,98E+06	&	96,07	&	5,65E+04	&	74,08	&	2,15E+02	&	34,11	 \\
+		&	Deriv	&	2,99E+05	&	3,33	&	5,54E+03	&	16,11	&	2,24E+02	&	36,26	 \\
+		&	Head	&	2,67E+04	&	0,59	&	3,26E+03	&	9,81	&	1,88E+02	&	29,63	 \\ \hline
+		\multirow{3}{*}{\shortstack{Kullback-\\Leibler}}	&	Tail	&	2,94E+03	&	12,54	&	1,03E+03	&	16,33	&	4,76E+01	&	8,99	 \\
+		&	Deriv	&	7,17E+03	&	18,87	&	1,08E+03	&	15,31	&	1,24E+02	&	12,65	 \\
+		&	Head	&	3,03E+04	&	68,59	&	6,66E+03	&	68,36	&	7,08E+02	&	78,36	 \\ \hline
+		\multirow{3}{*}{\shortstack{Kumar-\\Johnson}}	&	Tail	&	7,59E+07	&	98,86	&	1,48E+05	&	81,84	&	2,37E+02	&	36,04	 \\
+		&	Deriv	&	7,39E+05	&	1,03	&	5,94E+03	&	11,49	&	2,24E+02	&	35,24	 \\
+		&	Head	&	2,76E+04	&	0,12	&	3,27E+03	&	6,67	&	1,88E+02	&	28,72	\\	\hline
+	\end{tabular}																													
+\end{table}															
+																							
+
+\begin{table}[]
+	\tiny																
+	\centering																
+	\caption{Table of normalized and absolute values of ASH.}																
+	\label{tab:11}																
+	\begin{tabular}{p{.045\textwidth}|c|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}}																
+		\multirow{3}{*}{\shortstack{Divergence/\\Similarity}}	&	\multirow{3}{*}{\shortstack{Region\\of\\Interest}}	&	\multicolumn{6}{c}{Number of Events} \\												
+		&		&	\multicolumn{2}{c}{$5*10^1$}	&	\multicolumn{2}{c}{$1*10^3$}	&	\multicolumn{2}{c}{$1*10^5$} \\								
+		&		&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	 \\	\hline \hline
+		\multirow{3}{*}{L$_{\infty}$}	&	Tail	&	0,006	&	2,37	&	0,005	&	4,29	&	0,001	&	4,07	 \\	
+		&	Deriv	&	0,151	&	54,11	&	0,060	&	49,25	&	0,017	&	45,74	 \\	
+		&	Head	&	0,132	&	43,52	&	0,057	&	46,46	&	0,019	&	50,19	 \\	\hline
+		\multirow{3}{*}{L$_{2}$}	&	Tail	&	1,380	&	1,77	&	1,258	&	3,77	&	0,319	&	3,91	 \\	
+		&	Deriv	&	38,331	&	44,68	&	13,073	&	38,47	&	2,870	&	34,94	 \\	
+		&	Head	&	54,043	&	53,55	&	20,265	&	57,76	&	5,100	&	61,14	 \\	\hline
+		\multirow{3}{*}{Sorensen}	&	Tail	&	0,001	&	1,55	&	0,001	&	3,71	&	0,000	&	3,93	 \\	
+		&	Deriv	&	0,036	&	42,44	&	0,012	&	34,97	&	0,003	&	32,05	 \\	
+		&	Head	&	0,056	&	56,02	&	0,022	&	61,32	&	0,005	&	64,03	 \\	\hline
+		\multirow{3}{*}{Gower}	&	Tail	&	0,001	&	1,53	&	0,001	&	3,71	&	0,000	&	3,93	 \\	
+		&	Deriv	&	0,015	&	41,78	&	0,005	&	35,01	&	0,001	&	32,05	 \\	
+		&	Head	&	0,025	&	56,69	&	0,009	&	61,28	&	0,002	&	64,03	 \\	\hline
+		\multirow{3}{*}{\shortstack{Inner-\\Product}}	&	Tail	&	1,12E+00	&	0,00	&	1,11E+00	&	0,00	&	2,18E+00	&	0,00	 \\	
+		&	Deriv	&	1,84E+04	&	15,72	&	1,77E+04	&	16,06	&	1,77E+04	&	15,97	 \\	
+		&	Head	&	1,01E+05	&	84,28	&	9,25E+04	&	83,94	&	9,29E+04	&	84,03	 \\	\hline
+		\multirow{3}{*}{Harmonic}	&	Tail	&	4,31E+02	&	0,17	&	3,17E+02	&	0,12	&	7,57E+02	&	0,30	 \\	
+		&	Deriv	&	5,76E+04	&	22,53	&	6,23E+04	&	24,47	&	6,25E+04	&	24,41	 \\	
+		&	Head	&	1,99E+05	&	77,31	&	1,92E+05	&	75,41	&	1,93E+05	&	75,29	 \\	\hline
+		\multirow{3}{*}{Cosine}	&	Tail	&	0,000	&	0,16	&	0,000	&	0,40	&	0,000	&	0,34	 \\	
+		&	Deriv	&	0,007	&	57,53	&	0,001	&	37,56	&	0,000	&	26,30	 \\	
+		&	Head	&	0,006	&	42,31	&	0,001	&	62,04	&	0,000	&	73,36	 \\	\hline
+		\multirow{3}{*}{Hellinger}	&	Tail	&	20,498	&	13,53	&	26,183	&	36,01	&	6,392	&	37,93	 \\	
+		&	Deriv	&	92,027	&	56,55	&	26,148	&	35,90	&	5,256	&	31,32	 \\	
+		&	Head	&	52,726	&	29,93	&	20,706	&	28,09	&	5,190	&	30,74	 \\	\hline
+		\multirow{3}{*}{Squared $\chi^2$}	&	Tail	&	18,932	&	13,44	&	21,997	&	32,58	&	5,908	&	36,14	 \\	
+		&	Deriv	&	81,607	&	54,50	&	25,234	&	37,31	&	5,254	&	32,22	 \\	
+		&	Head	&	52,577	&	32,06	&	20,699	&	30,11	&	5,189	&	31,64	 \\	\hline
+		\multirow{3}{*}{AddSym $\chi^2$}	&	Tail	&	3,49E+03	&	3,81	&	1,56E+04	&	62,66	&	9,49E+02	&	76,75	 \\	
+		&	Deriv	&	2,02E+05	&	86,68	&	1,00E+04	&	27,26	&	1,12E+02	&	11,81	 \\	
+		&	Head	&	1,58E+04	&	9,52	&	1,85E+03	&	10,08	&	1,11E+02	&	11,45	 \\	\hline
+		\multirow{3}{*}{\shortstack{Kullback-\\Leibler}}	&	Tail	&	9,01E+02	&	3,47	&	1,59E+03	&	24,33	&	7,47E+01	&	13,03	 \\	
+		&	Deriv	&	1,72E+04	&	44,14	&	1,39E+03	&	17,21	&	1,29E+02	&	13,78	 \\	
+		&	Head	&	2,33E+04	&	52,39	&	6,11E+03	&	58,46	&	7,24E+02	&	73,19	 \\	\hline
+		\multirow{3}{*}{\shortstack{Kumar-\\Johnson}}	&	Tail	&	5,49E+03	&	3,02	&	5,30E+04	&	71,46	&	4,85E+03	&	92,76	 \\	
+		&	Deriv	&	7,93E+05	&	92,36	&	4,75E+04	&	23,88	&	1,12E+02	&	3,71	 \\	
+		&	Head	&	1,61E+04	&	4,62	&	1,86E+03	&	4,66	&	1,11E+02	&	3,53	 \\	\hline
+	\end{tabular}																
+\end{table}																
+
+
+\begin{table}[]
+	\tiny																
+	\centering																
+	\caption{Table of normalized and absolute values of KDE with fixed bandwidth.}																
+	\label{tab:12}																
+	\begin{tabular}{p{.045\textwidth}|c|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}}																
+		\multirow{3}{*}{\shortstack{Divergence/\\Similarity}}	&	\multirow{3}{*}{\shortstack{Region\\of\\Interest}}	&	\multicolumn{6}{c}{Number of Events} \\												
+		&		&	\multicolumn{2}{c}{$5*10^1$}	&	\multicolumn{2}{c}{$1*10^3$}	&	\multicolumn{2}{c}{$1*10^5$} \\								
+		&		&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	 \\	\hline \hline
+		\multirow{3}{*}{L$_{\infty}$}	&	Tail	&	0,100	&	31,72	&	0,008	&	11,73	&	0,001	&	4,20	 \\	
+		&	Deriv	&	0,117	&	37,66	&	0,033	&	43,93	&	0,007	&	44,88	 \\	
+		&	Head	&	0,093	&	30,62	&	0,035	&	44,34	&	0,008	&	50,92	 \\	\hline
+		\multirow{3}{*}{L$_{2}$}	&	Tail	&	49,611	&	37,51	&	3,485	&	13,65	&	0,159	&	3,86	 \\	
+		&	Deriv	&	37,328	&	28,56	&	8,555	&	32,92	&	1,458	&	34,46	 \\	
+		&	Head	&	43,749	&	33,93	&	15,105	&	53,43	&	2,792	&	61,67	 \\	\hline
+		\multirow{3}{*}{Sorensen}	&	Tail	&	0,053	&	37,19	&	0,004	&	13,90	&	0,000	&	3,82	 \\	
+		&	Deriv	&	0,038	&	26,56	&	0,008	&	29,61	&	0,001	&	31,88	 \\	
+		&	Head	&	0,052	&	36,25	&	0,017	&	56,49	&	0,003	&	64,30	 \\	\hline
+		\multirow{3}{*}{Gower}	&	Tail	&	0,024	&	38,74	&	0,002	&	14,04	&	0,000	&	3,82	 \\	
+		&	Deriv	&	0,017	&	26,69	&	0,003	&	29,86	&	0,001	&	31,92	 \\	
+		&	Head	&	0,021	&	34,57	&	0,007	&	56,09	&	0,001	&	64,26	 \\	\hline
+		\multirow{3}{*}{\shortstack{Inner-\\Product}}	&	Tail	&	5,84E+01	&	0,06	&	5,40E+00	&	0,01	&	2,27E+00	&	0,00	 \\	
+		&	Deriv	&	1,77E+04	&	17,49	&	1,77E+04	&	16,54	&	1,77E+04	&	16,04	 \\	
+		&	Head	&	8,43E+04	&	82,45	&	8,93E+04	&	83,46	&	9,25E+04	&	83,96	 \\	\hline
+		\multirow{3}{*}{Harmonic}	&	Tail	&	1,48E+03	&	0,60	&	1,07E+03	&	0,42	&	7,92E+02	&	0,31	 \\	
+		&	Deriv	&	6,39E+04	&	25,82	&	6,30E+04	&	24,91	&	6,26E+04	&	24,48	 \\	
+		&	Head	&	1,82E+05	&	73,58	&	1,89E+05	&	74,67	&	1,92E+05	&	75,21	 \\	\hline
+		\multirow{3}{*}{Cosine}	&	Tail	&	0,013	&	50,89	&	0,000	&	9,30	&	0,000	&	0,49	 \\	
+		&	Deriv	&	0,007	&	29,82	&	0,000	&	41,64	&	0,000	&	34,73	 \\	
+		&	Head	&	0,004	&	19,29	&	0,000	&	49,06	&	0,000	&	64,77	 \\	\hline
+		\multirow{3}{*}{Hellinger}	&	Tail	&	203,504	&	60,32	&	37,541	&	52,33	&	2,492	&	30,80	 \\	
+		&	Deriv	&	88,997	&	25,81	&	17,559	&	25,32	&	2,789	&	34,75	 \\	
+		&	Head	&	46,259	&	13,86	&	15,634	&	22,35	&	2,848	&	34,45	 \\	\hline
+		\multirow{3}{*}{Squared $\chi^2$}	&	Tail	&	162,498	&	56,15	&	34,047	&	50,29	&	2,486	&	30,76	 \\	
+		&	Deriv	&	82,525	&	27,92	&	17,464	&	26,39	&	2,788	&	34,77	 \\	
+		&	Head	&	46,177	&	15,92	&	15,631	&	23,32	&	2,848	&	34,47	 \\	\hline
+		\multirow{3}{*}{AddSym $\chi^2$}	&	Tail	&	2,46E+06	&	96,34	&	1,61E+04	&	77,74	&	2,74E+01	&	29,16	 \\	
+		&	Deriv	&	7,50E+04	&	2,93	&	1,38E+03	&	11,46	&	3,17E+01	&	34,98	 \\	
+		&	Head	&	1,05E+04	&	0,73	&	1,21E+03	&	10,80	&	3,63E+01	&	35,86	 \\	\hline
+		\multirow{3}{*}{\shortstack{Kullback-\\Leibler}}	&	Tail	&	2,55E+03	&	10,07	&	6,99E+02	&	10,85	&	3,61E+01	&	5,19	 \\	
+		&	Deriv	&	4,32E+03	&	13,94	&	1,18E+03	&	12,70	&	1,88E+02	&	14,50	 \\	
+		&	Head	&	2,63E+04	&	75,99	&	8,24E+03	&	76,45	&	1,07E+03	&	80,31	 \\	\hline
+		\multirow{3}{*}{\shortstack{Kumar-\\Johnson}}	&	Tail	&	1,44E+07	&	98,83	&	3,21E+04	&	83,01	&	2,76E+01	&	29,33	 \\	
+		&	Deriv	&	1,39E+05	&	0,98	&	1,41E+03	&	8,71	&	3,17E+01	&	34,89	 \\	
+		&	Head	&	1,06E+04	&	0,19	&	1,21E+03	&	8,29	&	3,63E+01	&	35,78	 \\	\hline
+	\end{tabular}																
+\end{table}																
+
+
+
+\begin{table}[]
+	\tiny																
+	\centering																
+	\caption{Table of normalized and absolute values of KDE with variable bandwidth.}																
+	\label{tab:13}																
+	\begin{tabular}{p{.045\textwidth}|c|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}|p{.03\textwidth}|p{.035\textwidth}}																
+		\multirow{3}{*}{\shortstack{Divergence/\\Similarity}}	&	\multirow{3}{*}{\shortstack{Region\\of\\Interest}}	&	\multicolumn{6}{c}{Number of Events} \\												
+		&		&	\multicolumn{2}{c}{$5*10^1$}	&	\multicolumn{2}{c}{$1*10^3$}	&	\multicolumn{2}{c}{$1*10^5$} \\								
+		&		&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	&	ABS	&	NORM(\%)	 \\	\hline \hline
+		\multirow{3}{*}{L$_{\infty}$}	&	Tail	&	0,102	&	30,18	&	0,016	&	20,22	&	0,002	&	12,86	 \\	
+		&	Deriv	&	0,126	&	37,78	&	0,037	&	45,39	&	0,008	&	45,62	 \\	
+		&	Head	&	0,106	&	32,04	&	0,028	&	34,39	&	0,008	&	41,52	 \\	\hline
+		\multirow{3}{*}{L$_{2}$}	&	Tail	&	51,583	&	36,00	&	7,488	&	25,98	&	1,272	&	20,85	 \\	
+		&	Deriv	&	38,885	&	27,61	&	10,264	&	35,56	&	2,337	&	38,13	 \\	
+		&	Head	&	51,544	&	36,39	&	11,651	&	38,46	&	2,663	&	41,03	 \\	\hline
+		\multirow{3}{*}{Sorensen}	&	Tail	&	0,056	&	35,31	&	0,009	&	27,94	&	0,002	&	23,93	 \\	
+		&	Deriv	&	0,040	&	25,38	&	0,010	&	32,96	&	0,002	&	35,91	 \\	
+		&	Head	&	0,063	&	39,31	&	0,013	&	39,10	&	0,003	&	40,16	 \\	\hline
+		\multirow{3}{*}{Gower}	&	Tail	&	0,025	&	37,18	&	0,004	&	28,16	&	0,001	&	23,96	 \\	
+		&	Deriv	&	0,017	&	25,56	&	0,004	&	32,80	&	0,001	&	35,86	 \\	
+		&	Head	&	0,025	&	37,26	&	0,006	&	39,05	&	0,001	&	40,17	 \\	\hline
+		\multirow{3}{*}{\shortstack{Inner-\\Product}}	&	Tail	&	6,10E+01	&	0,06	&	1,07E+01	&	0,01	&	3,81E+00	&	0,00	 \\	
+		&	Deriv	&	1,65E+04	&	17,09	&	1,69E+04	&	15,44	&	1,76E+04	&	15,94	 \\	
+		&	Head	&	8,10E+04	&	82,85	&	9,29E+04	&	84,55	&	9,30E+04	&	84,05	 \\	\hline
+		\multirow{3}{*}{Harmonic}	&	Tail	&	1,49E+03	&	0,62	&	1,29E+03	&	0,51	&	1,02E+03	&	0,40	 \\	
+		&	Deriv	&	6,21E+04	&	25,68	&	6,14E+04	&	24,06	&	6,22E+04	&	24,30	 \\	
+		&	Head	&	1,79E+05	&	73,70	&	1,93E+05	&	75,44	&	1,93E+05	&	75,30	 \\	\hline
+		\multirow{3}{*}{Cosine}	&	Tail	&	0,014	&	49,45	&	0,000	&	26,20	&	0,000	&	13,63	 \\	
+		&	Deriv	&	0,007	&	29,50	&	0,000	&	44,18	&	0,000	&	45,29	 \\	
+		&	Head	&	0,005	&	21,05	&	0,000	&	29,62	&	0,000	&	41,08	 \\	\hline
+		\multirow{3}{*}{Hellinger}	&	Tail	&	209,278	&	58,78	&	65,922	&	64,59	&	18,092	&	67,49	 \\	
+		&	Deriv	&	92,788	&	25,71	&	24,086	&	23,76	&	6,049	&	22,54	 \\	
+		&	Head	&	55,165	&	15,51	&	11,879	&	11,65	&	2,710	&	9,96	 \\	\hline
+		\multirow{3}{*}{Squared $\chi^2$}	&	Tail	&	166,814	&	54,49	&	58,225	&	62,01	&	17,577	&	66,87	 \\	
+		&	Deriv	&	85,959	&	27,71	&	23,792	&	25,41	&	6,045	&	22,97	 \\	
+		&	Head	&	55,043	&	17,80	&	11,877	&	12,57	&	2,710	&	10,16	 \\	\hline
+		\multirow{3}{*}{AddSym $\chi^2$}	&	Tail	&	2,61E+06	&	96,11	&	5,71E+04	&	93,35	&	1,59E+03	&	89,75	 \\	
+		&	Deriv	&	8,01E+04	&	3,02	&	2,60E+03	&	5,21	&	1,48E+02	&	8,35	 \\	
+		&	Head	&	1,44E+04	&	0,87	&	6,72E+02	&	1,43	&	3,37E+01	&	1,89	 \\	\hline
+		\multirow{3}{*}{\shortstack{Kullback-\\Leibler}}	&	Tail	&	2,59E+03	&	8,76	&	1,32E+03	&	17,94	&	5,18E+02	&	34,77	 \\	
+		&	Deriv	&	2,81E+03	&	10,47	&	2,18E+03	&	28,30	&	5,25E+02	&	33,26	 \\	
+		&	Head	&	3,27E+04	&	80,76	&	5,10E+03	&	53,76	&	6,72E+02	&	31,97	 \\	\hline
+		\multirow{3}{*}{\shortstack{Kumar-\\Johnson}}	&	Tail	&	1,54E+07	&	98,77	&	1,33E+05	&	96,36	&	1,81E+03	&	90,89	 \\	
+		&	Deriv	&	1,49E+05	&	1,01	&	2,77E+03	&	2,88	&	1,48E+02	&	7,43	 \\	
+		&	Head	&	1,46E+04	&	0,21	&	6,72E+02	&	0,76	&	3,37E+01	&	1,68	 \\	\hline
+	\end{tabular}																
+\end{table}																
+
+
+
+\section{Conclusions}\label{conclusao}
+
+This work presented a careful evaluation of the main divergence/similarity measures present in the literature. Initially, 42 divergences were considered and the correlations between them were analyzed, reducing them to a total of 12. After that, their equations were revised, a method based on RoI was chosen and those measures were evaluated for a Gaussian density function. This study showed how each divergence behaves according to the different RoI. The effect of binning has also been analyzed in this same context.
+
+The behavior of divergences/similarities in the density estimation process has also been evaluated using the concept of RoI. The achieved results provided a solid basis of knowledge about these measures in many aspects, making this study a foundation for deeper investigations.
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+
+
+This work is supported by the Brazilian Ministry of Science, Technology, Innovation and Communication (MCTIC), FINEP, CNPq and FAPEMIG.
+
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+% references section
+
+\bibliographystyle{IEEEtran}
+\bibliography{Bibliografias}
+
+\end{document}
+
+
